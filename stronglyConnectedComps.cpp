@@ -44,7 +44,7 @@ class Task {
         visited[source] = false;
         current_scc.push_back(source);
 
-        for (vector<int>::iterator i = adj[source].begin(); i != adj[source].end(); i++) {
+        for (vector<int>::iterator i = adjt[source].begin(); i != adjt[source].end(); i++) {
             if (visited[*i]) {
                 dfs_t(*i, visited, current_scc);
             }
@@ -53,7 +53,6 @@ class Task {
 
 	vector<vector<int> > get_scc() {
 		vector<vector<int> > scc;
-        stack<int>stack;
         vector<bool> visited(n + 1, false);
 
         vector<int> topSort;
